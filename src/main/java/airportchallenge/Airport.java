@@ -12,7 +12,4 @@ import java.util.List;
    }
 
 
-    void displayAirport() {
-        planes.forEach(plane -> System.out.println(plane));
-    }
 }
