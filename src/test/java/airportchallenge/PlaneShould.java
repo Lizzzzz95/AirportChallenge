@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class PlaneShould {
 
@@ -27,7 +27,8 @@ class PlaneShould {
     @Test
     void check_plane_has_taken_off() {
         plane.takeoff(airport);
-        assertEquals(plane.getCurrentAirport(), null);
+        assertNull(plane.getCurrentAirport());
     }
+
 
 }

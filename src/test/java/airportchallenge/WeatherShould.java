@@ -3,9 +3,10 @@ package airportchallenge;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import static org.mockito.Mockito.when;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
+
 
 class WeatherShould {
 
@@ -30,7 +31,8 @@ class WeatherShould {
     }
 
     @Test
-    void throw_error_if_weather_is_stormy() {
+    void check_if_weather_is_stormy() {
         assertTrue(stormyWeather.isStormy());
     }
+
 }
