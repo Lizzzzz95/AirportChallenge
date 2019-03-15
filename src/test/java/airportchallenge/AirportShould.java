@@ -13,11 +13,11 @@ class AirportShould {
     private Plane plane;
     private Weather stormyWeather = Mockito.mock(Weather.class);
     private Weather notStormyWeather = Mockito.mock(Weather.class);
-    private int AIRPORT_CAPACITY = 10;
+    private int testCapacity = 10;
 
     @BeforeEach
     void init() {
-        airport = new Airport();
+        airport = new Airport(testCapacity);
         plane = new Plane();
         when(stormyWeather.isStormy()).thenReturn(true);
         when(notStormyWeather.isStormy()).thenReturn(false);
@@ -53,7 +53,7 @@ class AirportShould {
 
     @Test
     void prevent_landing_when_airport_is_full() {
-        for (int i = 0; i < AIRPORT_CAPACITY; i++){
+        for (int i = 0; i < airport.airportCapacity; i++){
             airport.receivePlane(new Plane(), notStormyWeather);
         }
         assertTrue(airport.isFull());

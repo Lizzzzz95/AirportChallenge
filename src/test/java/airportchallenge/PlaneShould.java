@@ -3,19 +3,18 @@ package airportchallenge;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.Arrays;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlaneShould {
 
     private Plane plane;
     private Airport airport;
+    private int testCapacity = 10;
 
     @BeforeEach
     void init() {
         plane = new Plane();
-        airport = new Airport();
+        airport = new Airport(testCapacity);
     }
 
     @Test

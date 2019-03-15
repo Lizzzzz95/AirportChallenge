@@ -6,10 +6,11 @@ import java.util.List;
  class Airport {
 
     List<Plane> planes;
-    private int AIRPORT_CAPACITY = 10;
+    int airportCapacity;
 
-    Airport(){
-        planes = new ArrayList<>(AIRPORT_CAPACITY);
+    Airport(int capacity){
+        planes = new ArrayList<>(capacity);
+        airportCapacity = capacity;
     }
 
    void releasePlane(Plane plane, Weather weather) {
@@ -31,7 +32,7 @@ import java.util.List;
    }
 
    boolean isFull() {
-       return planes.size() == AIRPORT_CAPACITY;
+       return planes.size() == this.airportCapacity;
    }
 
  }
